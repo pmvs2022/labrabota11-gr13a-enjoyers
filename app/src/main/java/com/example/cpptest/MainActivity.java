@@ -1,6 +1,7 @@
 package com.example.cpptest;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
@@ -27,8 +28,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         context = getApplicationContext();
         ConstraintLayout root = binding.getRoot();
         setContentView(root);
-        root.findViewById(R.id.login_button).findViewById(R.id.button).setOnClickListener(this);
+        setButtonSettings();
+
     }
+
 
     public native boolean authorizeUser(int option, String email, String password);
     public native Object[] databaseQuery(int option, String beginDate, String endDate);
@@ -51,5 +54,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
         }
+    }
+
+    private void setButtonSettings() {
+        findViewById(R.id.login_button).findViewById(R.id.button).setOnClickListener(this);
+        ((AppCompatButton)findViewById(R.id.login_button).findViewById(R.id.button)).setText("Log in/Register");
     }
 }

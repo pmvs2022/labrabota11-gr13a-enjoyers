@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+
 public class OptionsActivity extends AppCompatActivity {
 
     @Override
@@ -13,6 +15,13 @@ public class OptionsActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_options);
         setListeners();
+        setButtonLabels();
+    }
+
+    private void setButtonLabels() {
+        ((AppCompatButton)findViewById(R.id.button_first).findViewById(R.id.button)).setText("First option");
+        ((AppCompatButton)findViewById(R.id.button_second).findViewById(R.id.button)).setText("Second option");
+        ((AppCompatButton)findViewById(R.id.button_third).findViewById(R.id.button)).setText("Third option");
     }
 
     private void setListeners(){
