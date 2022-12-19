@@ -25,6 +25,11 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity android:name=".OptionsActivity" ></activity>
+        <activity android:name=".OptionFirst" ></activity>
+        <activity android:name=".OptionSecond" ></activity>
+        <activity android:name=".OptionThird" ></activity>
+
     </application>
 
 </manifest>
