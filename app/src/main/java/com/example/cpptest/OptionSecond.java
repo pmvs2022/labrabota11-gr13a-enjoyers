@@ -10,6 +10,6 @@ public class OptionSecond extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
-        setContentView(R.layout.option_first);
+        setContentView(R.layout.option_second);
     }
 }

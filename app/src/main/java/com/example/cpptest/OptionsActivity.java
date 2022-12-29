@@ -1,7 +1,9 @@
 package com.example.cpptest;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +21,8 @@ public class OptionsActivity extends AppCompatActivity {
     }
 
     private void setButtonLabels() {
-        ((AppCompatButton)findViewById(R.id.button_first).findViewById(R.id.button)).setText("First option");
-        ((AppCompatButton)findViewById(R.id.button_second).findViewById(R.id.button)).setText("Second option");
+        ((AppCompatButton)findViewById(R.id.button_first).findViewById(R.id.button)).setText(R.string.option_first);
+        ((AppCompatButton)findViewById(R.id.button_second).findViewById(R.id.button)).setText(R.string.option_second);
         ((AppCompatButton)findViewById(R.id.button_third).findViewById(R.id.button)).setText("Third option");
     }
 
