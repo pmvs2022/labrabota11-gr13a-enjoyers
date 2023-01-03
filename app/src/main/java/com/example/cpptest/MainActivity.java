@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Context context ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.Theme_CppTest);
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -29,7 +30,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ConstraintLayout root = binding.getRoot();
         setContentView(root);
         setButtonSettings();
-
     }
 
 
@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (((View)view.getParent()).getId()){
             case R.id.login_button:
                 Toast.makeText( context, "This is login" + "\n" + R.id.login_button,Toast.LENGTH_LONG).show();
-
                 boolean registerConfirmed = true;
                 if(registerConfirmed){
                     Intent myIntent = new Intent(MainActivity.this, OptionsActivity.class);
