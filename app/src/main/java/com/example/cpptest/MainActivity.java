@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public static native boolean authorizeUser(int option, String email, String password);
-    public static native String[][] databaseQuery(int option, String beginDate, String endDate);
-    public static String[][] databaseQuery(int option) {
+    public static native Object[] databaseQuery(int option, String beginDate, String endDate);
+    public static Object[] databaseQuery(int option) {
         return databaseQuery(option, "", "");
     }
 

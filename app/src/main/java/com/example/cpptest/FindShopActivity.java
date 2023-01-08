@@ -18,7 +18,7 @@ public class FindShopActivity extends AppCompatActivity {
         setButtonLabels();
 
         // TODO: 30.12.2022 remove when done 
-        ((TextView)findViewById(R.id.tv_result_edit)).setText("Enter your results here");
+        //((TextView)findViewById(R.id.tv_result_edit)).setText("Enter your results here");
     }
 
     private void setButtonLabels() {
@@ -30,7 +30,7 @@ public class FindShopActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // TODO: 30.12.2022 change tv_resilt_edit TextView to show a results by pressing the button
-                ((TextView)findViewById(R.id.tv_result_edit)).setText("Enter your results here");
+             //   ((TextView)findViewById(R.id.tv_result_edit)).setText("Enter your results here");
             }
         };
 
