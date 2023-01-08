@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private ActivityMainBinding binding;
-    private Context context ;
+    private Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.Theme_CppTest);
@@ -34,12 +34,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ConstraintLayout root = binding.getRoot();
         setContentView(root);
         setButtonSettings();
+        Intent myIntent = new Intent(MainActivity.this, OptionsActivity.class);
+        MainActivity.this.startActivity(myIntent);
     }
 
 
-    public native boolean authorizeUser(int option, String email, String password);
-    public native Object[] databaseQuery(int option, String beginDate, String endDate);
-    public Object[] databaseQuery(int option) {
+    public static native boolean authorizeUser(int option, String email, String password);
+    public static native String[][] databaseQuery(int option, String beginDate, String endDate);
+    public static String[][] databaseQuery(int option) {
         return databaseQuery(option, "", "");
     }
 

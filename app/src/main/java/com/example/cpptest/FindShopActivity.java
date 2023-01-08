@@ -1,6 +1,5 @@
 package com.example.cpptest;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -8,13 +7,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
-public class OptionFirst extends AppCompatActivity {
+public class FindShopActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
-        setContentView(R.layout.option_first);
+        setContentView(R.layout.q_most_sold_for_the_period);
         setListeners();
         setButtonLabels();
 
@@ -23,7 +22,7 @@ public class OptionFirst extends AppCompatActivity {
     }
 
     private void setButtonLabels() {
-        ((AppCompatButton)findViewById(R.id.button_сhoose).findViewById(R.id.button)).setText("Choose");
+        ((AppCompatButton)findViewById(R.id.b_submit_period).findViewById(R.id.button)).setText("Choose");
     }
 
     private void setListeners(){
@@ -35,6 +34,6 @@ public class OptionFirst extends AppCompatActivity {
             }
         };
 
-        findViewById(R.id.button_сhoose).findViewById(R.id.button).setOnClickListener(listener);
+        findViewById(R.id.b_submit_period).findViewById(R.id.button).setOnClickListener(listener);
     }
 }

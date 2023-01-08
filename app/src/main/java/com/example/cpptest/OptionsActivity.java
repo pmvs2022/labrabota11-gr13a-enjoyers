@@ -1,9 +1,7 @@
 package com.example.cpptest;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.Preference;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,9 +19,10 @@ public class OptionsActivity extends AppCompatActivity {
     }
 
     private void setButtonLabels() {
-        ((AppCompatButton)findViewById(R.id.button_first).findViewById(R.id.button)).setText(R.string.option_first);
-        ((AppCompatButton)findViewById(R.id.button_second).findViewById(R.id.button)).setText(R.string.option_second);
-        ((AppCompatButton)findViewById(R.id.button_third).findViewById(R.id.button)).setText("Third option");
+        ((AppCompatButton)findViewById(R.id.b_find_shop).findViewById(R.id.button)).setText(R.string.find_shop);
+        ((AppCompatButton)findViewById(R.id.b_query_most_sold_p).findViewById(R.id.button)).setText(R.string.q_most_sold_for_the_period);
+        ((AppCompatButton)findViewById(R.id.b_query_most_sold).findViewById(R.id.button)).setText(R.string.q_most_sold);
+        ((AppCompatButton)findViewById(R.id.b_query_sales_info).findViewById(R.id.button)).setText(R.string.q_sales_info_by_author);
     }
 
     private void setListeners(){
@@ -31,26 +30,40 @@ public class OptionsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Class nextLayoutClass;
+                String[] columnNames = new String[0];
+                int option = -1;
                 switch (((View)view.getParent()).getId()) {
-                    case R.id.button_first:
-                        nextLayoutClass = OptionFirst.class;
+                    case R.id.b_find_shop:
+                        nextLayoutClass = FindShopActivity.class;
                         break;
-                    case R.id.button_second:
-                        nextLayoutClass = OptionSecond.class;
+                    case R.id.b_query_most_sold_p:
+                        nextLayoutClass = QueryForPeriodActivity.class;
+                        columnNames = new String[]{"Compact code", "Copies sold", "Total cost"};
+                        option = 1;
                         break;
-                    case R.id.button_third:
-                        nextLayoutClass = OptionThird.class;
+                    case R.id.b_query_most_sold:
+                        nextLayoutClass = QueryActivity.class;
+                        columnNames = new String[]{"Compact code", "Copies sold", "Total cost"};
+                        option = 2;
+                        break;
+                    case R.id.b_query_sales_info:
+                        nextLayoutClass = QueryActivity.class;
+                        columnNames = new String[]{"Author name", "Copies sold", "Total cost"};
+                        option = 4;
                         break;
                     default:
                         nextLayoutClass = this.getClass();
                 }
                 Intent myIntent = new Intent(OptionsActivity.this, nextLayoutClass);
+                myIntent.putExtra("option", option);
+                myIntent.putExtra("column_names", columnNames);
                 startActivity(myIntent);
             }
         };
 
-        findViewById(R.id.button_first).findViewById(R.id.button).setOnClickListener(listener);
-        findViewById(R.id.button_second).findViewById(R.id.button).setOnClickListener(listener);
-        findViewById(R.id.button_third).findViewById(R.id.button).setOnClickListener(listener);
+        findViewById(R.id.b_find_shop).findViewById(R.id.button).setOnClickListener(listener);
+        findViewById(R.id.b_query_most_sold_p).findViewById(R.id.button).setOnClickListener(listener);
+        findViewById(R.id.b_query_most_sold).findViewById(R.id.button).setOnClickListener(listener);
+        findViewById(R.id.b_query_sales_info).findViewById(R.id.button).setOnClickListener(listener);
     }
 }

@@ -13,5 +13,7 @@
     <string name="result">Result</string>
     <string name="find_shop">Find the nearest shop</string>
     <string name="q_most_sold_for_the_period">Most sold CDs for the period</string>
+    <string name="q_most_sold">Most sold CDs</string>
     <string name="q_sales_info_by_author">Sales info by authors</string>
+    <string name="date_regex">[0-9]{2}-[0-9]{2}-[0-9]{4}</string>
 </resources>
