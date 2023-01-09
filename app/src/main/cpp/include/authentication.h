@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <regex>
+#include <user_actions.h>
 #include <aes128.h>
 #include <sqlite3_database.h>
 
@@ -17,8 +18,6 @@ const std::regex email_regex("(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'
 
 const std::regex password_regex("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$");
 
-const std::string users_db_path = "../users.db";
-const std::string users_db_create = "CREATE TABLE IF NOT EXISTS users (user_id integer PRIMARY KEY AUTOINCREMENT, user_email text, user_password text);";
 const std::string new_user_data_insert = "INSERT INTO users (user_email, user_password) VALUES (?, ?);";
 
 std::vector<std::vector<std::string>> find_user_by_email(const sqlite3_database& db, const std::string& email);
