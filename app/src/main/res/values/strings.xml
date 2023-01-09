@@ -12,6 +12,8 @@
     <string name="end_period">Period end</string>
     <string name="result">Result</string>
     <string name="find_shop">Find the nearest shop</string>
+    <string name="submit_period">Submit period</string>
+    <string name="execute_query">Execute query</string>
     <string name="q_most_sold_for_the_period">Most sold CDs for the period</string>
     <string name="q_most_sold">Most sold CDs</string>
     <string name="q_sales_info_by_author">Sales info by authors</string>
