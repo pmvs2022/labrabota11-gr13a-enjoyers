@@ -26,8 +26,6 @@ bool sign_up(const sqlite3_database& db, std::string_view email, std::string_vie
 }
 
 bool authenticate_user(int option, std::string_view email, std::string_view password) {
-    sqlite3_database users_data(users_db_path);
-    users_data.insert(users_db_create);
-
+    sqlite3_database users_data(music_saloon_path);
     return option == 0 ? log_in(users_data, email, password) : sign_up(users_data, email, password);
 }

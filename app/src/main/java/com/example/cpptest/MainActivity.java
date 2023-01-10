@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Toast.makeText(context, "Logged in successfully!", Toast.LENGTH_LONG).show();
                         MainActivity.this.startActivity(myIntent);
                     } else {
-                        Toast.makeText(context, "Wrong Credentials\nInvalid username or password", Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, "Invalid username or password", Toast.LENGTH_LONG).show();
                     }
                     break;
                 case R.id.signup_button:
@@ -78,11 +78,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Toast.makeText(context, "Signed up successfully!", Toast.LENGTH_LONG).show();
                         MainActivity.this.startActivity(myIntent);
                     } else {
-                        Toast.makeText(context, "Wrong Credentials\nInvalid username (must match email format) or password (must contain at least 8 characters, at least one letter and one digit)", Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, "Invalid credentials format", Toast.LENGTH_LONG).show();
                     }
                     break;
             }
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             System.out.println(e.toString());
         }
     }
