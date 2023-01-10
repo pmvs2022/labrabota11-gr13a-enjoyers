@@ -4,7 +4,9 @@ import static com.example.cpptest.MainActivity.databaseQuery;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
+import android.view.TouchDelegate;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.GridView;
@@ -82,4 +84,5 @@ public class QueryForPeriodActivity extends AppCompatActivity implements View.On
             Toast.makeText( context, "Wrong date period format (use dd-mm-yyyy)",Toast.LENGTH_LONG).show();
         }
     }
+
 }

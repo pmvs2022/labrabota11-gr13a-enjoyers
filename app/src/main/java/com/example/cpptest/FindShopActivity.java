@@ -1,6 +1,8 @@
 package com.example.cpptest;
 
+import android.graphics.Rect;
 import android.os.Bundle;
+import android.view.TouchDelegate;
 import android.view.View;
 import android.widget.TextView;
 
@@ -32,4 +34,5 @@ public class FindShopActivity extends AppCompatActivity {
 
         findViewById(R.id.b_submit_period).findViewById(R.id.button).setOnClickListener(listener);
     }
+
 }

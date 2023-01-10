@@ -1,7 +1,10 @@
 package com.example.cpptest;
 
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
+import android.text.method.Touch;
+import android.view.TouchDelegate;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -66,4 +69,5 @@ public class OptionsActivity extends AppCompatActivity {
         findViewById(R.id.b_query_most_sold).findViewById(R.id.button).setOnClickListener(listener);
         findViewById(R.id.b_query_sales_info).findViewById(R.id.button).setOnClickListener(listener);
     }
+
 }
