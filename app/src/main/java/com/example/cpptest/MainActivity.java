@@ -22,12 +22,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     static {
         System.loadLibrary("cpptest");
     }
+
     private EditText etUsername;
     private EditText etPassword;
     private ActivityMainBinding binding;
     private Context context;
     private String username;
     private String password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.Theme_CppTest);
@@ -40,12 +42,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         etPassword = (EditText) root.findViewById(R.id.password);
         setContentView(root);
         setButtonsSettings();
+        Intent myIntent = new Intent(MainActivity.this, OptionsActivity.class);
+        MainActivity.this.startActivity(myIntent);
     }
 
 
-    public native boolean authorizeUser(int option, String email, String password);
-    public native Object[] databaseQuery(int option, String beginDate, String endDate);
-    public Object[] databaseQuery(int option) {
+    public static native boolean authorizeUser(int option, String email, String password);
+
+    public static native Object[] databaseQuery(int option, String beginDate, String endDate);
+
+    public static Object[] databaseQuery(int option) {
         return databaseQuery(option, "", "");
     }
 
@@ -53,8 +59,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         try {
-        username = etUsername.getText().toString();
-        password = etPassword.getText().toString();
+            username = etUsername.getText().toString();
+            password = etPassword.getText().toString();
 
             switch (((View) view.getParent()).getId()) {
                 case R.id.login_button:
@@ -85,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setButtonsSettings() {
         findViewById(R.id.login_button).findViewById(R.id.button).setOnClickListener(this);
         findViewById(R.id.signup_button).findViewById(R.id.button).setOnClickListener(this);
-        ((AppCompatButton)findViewById(R.id.login_button).findViewById(R.id.button)).setText("Log in");
-        ((AppCompatButton)findViewById(R.id.signup_button).findViewById(R.id.button)).setText("Sign up");
+        ((AppCompatButton) findViewById(R.id.login_button).findViewById(R.id.button)).setText("Log in");
+        ((AppCompatButton) findViewById(R.id.signup_button).findViewById(R.id.button)).setText("Sign up");
     }
 }

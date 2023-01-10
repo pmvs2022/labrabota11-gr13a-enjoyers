@@ -27,9 +27,9 @@
                 android:value="" />
         </activity>
         <activity android:name=".OptionsActivity" ></activity>
-        <activity android:name=".OptionFirst" ></activity>
-        <activity android:name=".OptionSecond" ></activity>
-        <activity android:name=".OptionThird" ></activity>
+        <activity android:name=".FindShopActivity" ></activity>
+        <activity android:name=".QueryForPeriodActivity" ></activity>
+        <activity android:name=".QueryActivity" ></activity>
 
     </application>
 
