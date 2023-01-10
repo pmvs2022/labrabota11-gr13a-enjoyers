@@ -14,7 +14,7 @@ public class OptionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_options);
-        setListeners();
+        setButtonListeners();
         setButtonLabels();
     }
 
@@ -25,7 +25,7 @@ public class OptionsActivity extends AppCompatActivity {
         ((AppCompatButton)findViewById(R.id.b_query_sales_info).findViewById(R.id.button)).setText(R.string.q_sales_info_by_author);
     }
 
-    private void setListeners(){
+    private void setButtonListeners(){
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {

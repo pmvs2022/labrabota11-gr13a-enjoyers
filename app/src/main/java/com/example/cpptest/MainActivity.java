@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         etUsername = (EditText) root.findViewById(R.id.username);
         etPassword = (EditText) root.findViewById(R.id.password);
         setContentView(root);
+
         setButtonsSettings();
         Intent myIntent = new Intent(MainActivity.this, OptionsActivity.class);
         MainActivity.this.startActivity(myIntent);
