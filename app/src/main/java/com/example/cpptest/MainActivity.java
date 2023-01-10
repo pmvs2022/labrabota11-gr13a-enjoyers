@@ -22,12 +22,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     static {
         System.loadLibrary("cpptest");
     }
+
     private EditText etUsername;
     private EditText etPassword;
     private ActivityMainBinding binding;
     private Context context;
     private String username;
     private String password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.Theme_CppTest);
@@ -46,7 +48,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public static native boolean authorizeUser(int option, String email, String password);
+
     public static native Object[] databaseQuery(int option, String beginDate, String endDate);
+
     public static Object[] databaseQuery(int option) {
         return databaseQuery(option, "", "");
     }
@@ -78,8 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                     break;
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.toString());
         }
     }
@@ -87,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setButtonsSettings() {
         findViewById(R.id.login_button).findViewById(R.id.button).setOnClickListener(this);
         findViewById(R.id.signup_button).findViewById(R.id.button).setOnClickListener(this);
-        ((AppCompatButton)findViewById(R.id.login_button).findViewById(R.id.button)).setText("Log in");
-        ((AppCompatButton)findViewById(R.id.signup_button).findViewById(R.id.button)).setText("Sign up");
+        ((AppCompatButton) findViewById(R.id.login_button).findViewById(R.id.button)).setText("Log in");
+        ((AppCompatButton) findViewById(R.id.signup_button).findViewById(R.id.button)).setText("Sign up");
     }
 }
