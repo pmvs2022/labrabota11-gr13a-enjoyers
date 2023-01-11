@@ -10,12 +10,8 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -49,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setButtonsSettings();
         Intent myIntent = new Intent(MainActivity.this, OptionsActivity.class);
         MainActivity.this.startActivity(myIntent);
-        requestStoragePermissions();
+        requestNecessaryPermissions();
     }
 
 
@@ -101,15 +97,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ((AppCompatButton) findViewById(R.id.signup_button).findViewById(R.id.button)).setText("Sign up");
     }
 
-    private void requestStoragePermissions() {
+    private void requestPermission(String permission) {
         if (ContextCompat.checkSelfPermission(MainActivity.this,
-                Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+                permission) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[] {permission}, 1);
         }
+    }
 
-        if (ContextCompat.checkSelfPermission(MainActivity.this,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-        }
+    private void requestNecessaryPermissions() {
+        requestPermission(Manifest.permission.ACCESS_FINE_LOCATION);
+        requestPermission(Manifest.permission.ACCESS_COARSE_LOCATION);
+        requestPermission(Manifest.permission.READ_EXTERNAL_STORAGE);
+        requestPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
     }
 }
