@@ -24,4 +24,9 @@
     <string name="nearest_shop">Nearest shop</string>
     <string name="find_nearest_shop">Find nearest shop</string>
     <string name="choose">Choose</string>
+    <string name="title_activity_find_shop">FindShopActivity</string>
+    <string name="nemiga">Комсомольская улица, 13А</string>
+    <string name="railway_station">Привокзальная площадь, 3</string>
+    <string name="vostok">улица Калиновского, 82к2</string>
+    <string name="oktyabrskaya">проспект Независимости, 23</string>
 </resources>

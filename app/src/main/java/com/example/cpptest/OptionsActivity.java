@@ -37,7 +37,7 @@ public class OptionsActivity extends AppCompatActivity {
                 int option = -1;
                 switch (((View)view.getParent()).getId()) {
                     case R.id.b_find_shop:
-                        nextLayoutClass = FindShopActivity.class;
+                        nextLayoutClass = ShopActivity.class;
                         break;
                     case R.id.b_query_most_sold_p:
                         nextLayoutClass = QueryForPeriodActivity.class;
