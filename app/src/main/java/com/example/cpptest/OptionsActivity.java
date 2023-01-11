@@ -1,10 +1,7 @@
 package com.example.cpptest;
 
 import android.content.Intent;
-import android.graphics.Rect;
 import android.os.Bundle;
-import android.text.method.Touch;
-import android.view.TouchDelegate;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,7 +34,7 @@ public class OptionsActivity extends AppCompatActivity {
                 int option = -1;
                 switch (((View)view.getParent()).getId()) {
                     case R.id.b_find_shop:
-                        nextLayoutClass = FindShopActivity.class;
+                        nextLayoutClass = ShopActivity.class;
                         break;
                     case R.id.b_query_most_sold_p:
                         nextLayoutClass = QueryForPeriodActivity.class;
