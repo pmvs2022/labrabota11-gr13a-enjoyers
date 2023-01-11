@@ -15,7 +15,6 @@ public class MyLocationListener implements LocationListener {
 
     static Location imHere;
 
-    @SuppressLint("MissingPermission")
     public static void SetUpLocationListener(Context context)
     {
         LocationManager locationManager = (LocationManager)

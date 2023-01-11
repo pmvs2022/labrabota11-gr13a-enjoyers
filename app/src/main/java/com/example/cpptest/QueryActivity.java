@@ -48,9 +48,9 @@ public class QueryActivity extends AppCompatActivity implements View.OnClickList
             Map<String, String> tab = new HashMap<String, String>();
             switch (option) {
                 case 2:
-                    tab.put(columnNames[0], entry[3]);
-                    tab.put(columnNames[1], entry[1]);
-                    tab.put(columnNames[2], entry[5]);
+                    tab.put(columnNames[0], entry[3]);//3
+                    tab.put(columnNames[1], entry[1]);//1
+                    tab.put(columnNames[2], entry[5]);//5
                     break;
                 case 4:
                     tab.put(columnNames[0], entry[1]);
