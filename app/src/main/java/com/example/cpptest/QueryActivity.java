@@ -33,7 +33,7 @@ public class QueryActivity extends AppCompatActivity implements View.OnClickList
         gvQueryResult = (GridView) findViewById(R.id.gv_query_result2);
         intent = getIntent();
         context = getApplicationContext();
-        findViewById(R.id.b_execute_query).findViewById(R.id.button).setOnClickListener(this);
+        ButtonFragment.addTouchDelegate(findViewById(R.id.b_execute_query).findViewById(R.id.button),this);
         ((AppCompatButton) findViewById(R.id.b_execute_query).findViewById(R.id.button)).setText(getResources().getText(R.string.execute_query));
     }
 

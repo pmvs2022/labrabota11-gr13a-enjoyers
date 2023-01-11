@@ -50,7 +50,7 @@ public class QueryForPeriodActivity extends AppCompatActivity implements View.On
         context = getApplicationContext();
         etPeriodStart.setText("01-01-2022");
         etPeriodEnd.setText("01-06-2022");
-        findViewById(R.id.b_submit_period).findViewById(R.id.button).setOnClickListener(this);
+        ButtonFragment.addTouchDelegate(findViewById(R.id.b_submit_period).findViewById(R.id.button),this);
         ((AppCompatButton) findViewById(R.id.b_submit_period).findViewById(R.id.button)).setText(getResources().getText(R.string.submit_period));
     }
 

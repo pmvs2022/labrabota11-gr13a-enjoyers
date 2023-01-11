@@ -64,10 +64,10 @@ public class OptionsActivity extends AppCompatActivity {
             }
         };
 
-        findViewById(R.id.b_find_shop).findViewById(R.id.button).setOnClickListener(listener);
-        findViewById(R.id.b_query_most_sold_p).findViewById(R.id.button).setOnClickListener(listener);
-        findViewById(R.id.b_query_most_sold).findViewById(R.id.button).setOnClickListener(listener);
-        findViewById(R.id.b_query_sales_info).findViewById(R.id.button).setOnClickListener(listener);
+        ButtonFragment.addTouchDelegate(findViewById(R.id.b_find_shop).findViewById(R.id.button),listener);
+        ButtonFragment.addTouchDelegate(findViewById(R.id.b_query_most_sold_p).findViewById(R.id.button),listener);
+        ButtonFragment.addTouchDelegate(findViewById(R.id.b_query_most_sold).findViewById(R.id.button),listener);
+        ButtonFragment.addTouchDelegate(findViewById(R.id.b_query_sales_info).findViewById(R.id.button),listener);
     }
 
 }

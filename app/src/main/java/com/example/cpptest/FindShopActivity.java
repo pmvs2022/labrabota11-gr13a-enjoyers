@@ -32,7 +32,7 @@ public class FindShopActivity extends AppCompatActivity {
             }
         };
 
-        findViewById(R.id.b_submit_period).findViewById(R.id.button).setOnClickListener(listener);
+        ButtonFragment.addTouchDelegate(findViewById(R.id.b_submit_period).findViewById(R.id.button),listener);
     }
 
 }

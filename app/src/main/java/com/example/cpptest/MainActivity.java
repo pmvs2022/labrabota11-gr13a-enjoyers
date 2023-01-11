@@ -90,8 +90,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void setButtonsSettings() {
-        findViewById(R.id.login_button).findViewById(R.id.button).setOnClickListener(this);
-        findViewById(R.id.signup_button).findViewById(R.id.button).setOnClickListener(this);
+        ButtonFragment.addTouchDelegate(findViewById(R.id.login_button).findViewById(R.id.button),this);
+        ButtonFragment.addTouchDelegate(findViewById(R.id.signup_button).findViewById(R.id.button),this);
         ((AppCompatButton) findViewById(R.id.login_button).findViewById(R.id.button)).setText("Log in");
         ((AppCompatButton) findViewById(R.id.signup_button).findViewById(R.id.button)).setText("Sign up");
     }

@@ -97,6 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:numColumns="3"
+            android:paddingHorizontal="10sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_result"

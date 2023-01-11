@@ -19,13 +19,8 @@ public class ButtonFragment extends Fragment {
         return inflater.inflate(R.layout.button_fragment, container, false);
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        addTouchDelegate(getActivity().findViewById(R.id.button));
-    }
 
-    private void addTouchDelegate(View button){
+    public static void addTouchDelegate(View button, View.OnClickListener listener){
         final View parent = (View) button.getParent();
         parent.post(new Runnable() {
             @Override
@@ -39,6 +34,6 @@ public class ButtonFragment extends Fragment {
                 parent.setTouchDelegate(new TouchDelegate(r,button));
             }
         });
-
+        button.setOnClickListener(listener);
     }
 }
