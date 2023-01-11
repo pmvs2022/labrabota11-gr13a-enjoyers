@@ -4,7 +4,9 @@ import static com.example.cpptest.MainActivity.databaseQuery;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
+import android.view.TouchDelegate;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.GridView;
@@ -48,7 +50,7 @@ public class QueryForPeriodActivity extends AppCompatActivity implements View.On
         context = getApplicationContext();
         etPeriodStart.setText("01-01-2022");
         etPeriodEnd.setText("01-06-2022");
-        findViewById(R.id.b_submit_period).findViewById(R.id.button).setOnClickListener(this);
+        ButtonFragment.addTouchDelegate(findViewById(R.id.b_submit_period).findViewById(R.id.button),this);
         ((AppCompatButton) findViewById(R.id.b_submit_period).findViewById(R.id.button)).setText(getResources().getText(R.string.submit_period));
     }
 
@@ -82,4 +84,5 @@ public class QueryForPeriodActivity extends AppCompatActivity implements View.On
             Toast.makeText( context, "Wrong date period format (use dd-mm-yyyy)",Toast.LENGTH_LONG).show();
         }
     }
+
 }

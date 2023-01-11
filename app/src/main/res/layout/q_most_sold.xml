@@ -5,27 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment
-        android:id="@+id/b_execute_query"
-        android:name="com.example.cpptest.ButtonFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_result2"
-        tools:layout="@layout/button_fragment" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_result2"
-        android:layout_width="fill_parent"
-        android:layout_height="580dp"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/activity_vertical_margin"
         android:background="@drawable/back"
+        app:layout_constraintVertical_weight="@integer/material_motion_duration_long_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/b_execute_query">
 
         <TextView
             android:id="@+id/tv_result2"
@@ -43,11 +34,25 @@
         <GridView
             android:id="@+id/gv_query_result2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:numColumns="3"
+            android:paddingHorizontal="10sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_result2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <fragment
+        android:id="@+id/b_execute_query"
+        android:name="com.example.cpptest.ButtonFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="@integer/material_motion_duration_short_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_result2"
+        tools:layout="@layout/button_fragment" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,48 +23,52 @@
         android:id="@+id/b_find_shop"
         android:name="com.example.cpptest.ButtonFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/b_query_most_sold_p"
         tools:layout="@layout/button_fragment" />
 
     <fragment
         android:id="@+id/b_query_most_sold_p"
         android:name="com.example.cpptest.ButtonFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/b_find_shop"
+        app:layout_constraintBottom_toTopOf="@+id/b_query_most_sold"
+
         tools:layout="@layout/button_fragment" />
 
     <fragment
         android:id="@+id/b_query_most_sold"
         android:name="com.example.cpptest.ButtonFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/b_query_most_sold_p"
+        app:layout_constraintBottom_toTopOf="@+id/b_query_sales_info"
         tools:layout="@layout/button_fragment" />
 
     <fragment
         android:id="@+id/b_query_sales_info"
         android:name="com.example.cpptest.ButtonFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/b_query_most_sold"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:layout="@layout/button_fragment" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

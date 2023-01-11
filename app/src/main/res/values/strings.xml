@@ -4,6 +4,7 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
+    <string name="action_sign_up_short">Sign up</string>
     <string name="welcome">"Welcome!"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
@@ -18,4 +19,9 @@
     <string name="q_most_sold">Most sold CDs</string>
     <string name="q_sales_info_by_author">Sales info by authors</string>
     <string name="date_regex">[0-9]{2}-[0-9]{2}-[0-9]{4}</string>
+    <string name="option_first">Selection records by period</string>
+    <string name="option_second">Searching the nearest shop</string>
+    <string name="nearest_shop">Nearest shop</string>
+    <string name="find_nearest_shop">Find nearest shop</string>
+    <string name="choose">Choose</string>
 </resources>

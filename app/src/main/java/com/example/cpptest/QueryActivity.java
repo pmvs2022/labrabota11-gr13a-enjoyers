@@ -4,7 +4,9 @@ import static com.example.cpptest.MainActivity.databaseQuery;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
+import android.view.TouchDelegate;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
@@ -31,7 +33,7 @@ public class QueryActivity extends AppCompatActivity implements View.OnClickList
         gvQueryResult = (GridView) findViewById(R.id.gv_query_result2);
         intent = getIntent();
         context = getApplicationContext();
-        findViewById(R.id.b_execute_query).findViewById(R.id.button).setOnClickListener(this);
+        ButtonFragment.addTouchDelegate(findViewById(R.id.b_execute_query).findViewById(R.id.button),this);
         ((AppCompatButton) findViewById(R.id.b_execute_query).findViewById(R.id.button)).setText(getResources().getText(R.string.execute_query));
     }
 
@@ -63,4 +65,6 @@ public class QueryActivity extends AppCompatActivity implements View.OnClickList
         adapter = new SimpleAdapter(QueryActivity.this, data, R.layout.gridview_query_result_layout, columnNames, into);
         gvQueryResult.setAdapter(adapter);
     }
+
+
 }
