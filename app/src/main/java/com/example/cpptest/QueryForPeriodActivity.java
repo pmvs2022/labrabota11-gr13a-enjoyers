@@ -69,7 +69,7 @@ public class QueryForPeriodActivity extends AppCompatActivity implements View.On
                 Map<String, String> tab = new HashMap<String, String>();
                 switch (option) {
                     case 1:
-                        for (int j = 0; j < entry.length; ++j) {
+                        for (int j = 0; j < columnNames.length; ++j) {
                             tab.put(columnNames[j], entry[j]);
                         }
                         break;

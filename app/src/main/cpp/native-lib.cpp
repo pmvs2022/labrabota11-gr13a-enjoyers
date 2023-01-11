@@ -23,7 +23,7 @@ std::string jstring_to_stdstring(JNIEnv *env, jstring jStr) {
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_example_cpptest_MainActivity_authorizeUser(JNIEnv* env, jobject, jint option, jstring email, jstring password) {
+Java_com_example_cpptest_MainActivity_authorizeUser(JNIEnv* env, jclass , jint option, jstring email, jstring password) {
     int _option = static_cast<int>(option);
     std::string _email = jstring_to_stdstring(env, email);
     std::string _password = jstring_to_stdstring(env, password);
@@ -31,12 +31,11 @@ Java_com_example_cpptest_MainActivity_authorizeUser(JNIEnv* env, jobject, jint o
 }
 
 extern "C" JNIEXPORT jobjectArray JNICALL
-Java_com_example_cpptest_MainActivity_databaseQuery(JNIEnv* env, jobject, jint option, jstring beginDate, jstring endDate) {
+Java_com_example_cpptest_MainActivity_databaseQuery(JNIEnv* env, jclass, jint option, jstring beginDate, jstring endDate) {
     int _option = static_cast<int>(option);
     std::string _begin_date = jstring_to_stdstring(env, beginDate);
     std::string _end_date = jstring_to_stdstring(env, endDate);
-    //auto result = db_query(_option, _begin_date, _end_date);
-    std::vector<std::vector<std::string>> result {{"Hello", "World"}, {"How", "are you?"}};
+    auto result = db_query(_option, _begin_date, _end_date);
 
     jclass array_class = env->FindClass("java/lang/Object");
     jclass string_class = env->FindClass("java/lang/String");

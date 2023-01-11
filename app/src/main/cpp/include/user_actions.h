@@ -3,7 +3,7 @@
 #include <iostream>
 #include <sqlite3_database.h>
 
-const std::string music_saloon_path = "../src/Music_Salon3.0.db";
+const std::string music_saloon_path = "/sdcard/Download/Music_Salon3.0.db";
 const std::string query_solds_and_remainder = "SELECT DISTINCT CD.compact_code, sum(copies_amount)as sold_amount, CD_amount\n"
                                               "FROM trades\n"
                                               "INNER JOIN storage ON storage.id_storageSlot=trades.id_storageSlot\n"
